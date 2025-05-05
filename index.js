@@ -2,7 +2,7 @@ require('dotenv').config();
 const http = require('http');
 
 function requestController(req, res) {
-    console.log("Solicitud recibida: ${req.method} ${req.url}");
+    console.log(`Solicitud recibida: ${req.method} ${req.url}`);
 
     if (req.url === '/' && req.method === 'GET') {
         const html = `
@@ -29,5 +29,5 @@ const server = http.createServer(requestController);
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
-    console.log("Servidor escuchando en el puerto ${PORT}");
+    console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
